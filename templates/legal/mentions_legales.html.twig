@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mentions légales — Urban's Food{% endblock %}
+{% block meta_description %}Mentions légales du site Urban's Food, street food à Lyon.{% endblock %}
+
+{% block body %}
+    <header class="uf-page-head">
+        <div class="uf-container uf-page-head__inner">
+            <div data-reveal="0" class="uf-page-head__label">INFORMATIONS LÉGALES</div>
+            <h1 data-reveal="80" class="uf-page-head__title">Mentions légales<span class="uf-page-head__accent">.</span></h1>
+        </div>
+    </header>
+
+    <div class="uf-container uf-legal">
+        <section class="uf-legal__section">
+            <h2 class="uf-legal__heading">Éditeur du site</h2>
+            <p class="uf-legal__text">
+                Urban's Food — [FORME JURIDIQUE ET CAPITAL À COMPLÉTER]<br>
+                12 rue de la République, 69007 Lyon<br>
+                Téléphone : 04 72 00 00 00<br>
+                SIRET : [À COMPLÉTER]<br>
+                Directeur de la publication : [À COMPLÉTER]
+            </p>
+        </section>
+
+        <section class="uf-legal__section">
+            <h2 class="uf-legal__heading">Hébergement</h2>
+            <p class="uf-legal__text">
+                [NOM DE L'HÉBERGEUR À COMPLÉTER]<br>
+                [ADRESSE DE L'HÉBERGEUR À COMPLÉTER]<br>
+                [TÉLÉPHONE DE L'HÉBERGEUR À COMPLÉTER]
+            </p>
+        </section>
+
+        <section class="uf-legal__section">
+            <h2 class="uf-legal__heading">Propriété intellectuelle</h2>
+            <p class="uf-legal__text">
+                L'ensemble du contenu de ce site (textes, visuels, logo, charte graphique) est la propriété exclusive
+                d'Urban's Food, sauf mention contraire. Toute reproduction, représentation ou diffusion, totale ou
+                partielle, sans autorisation écrite préalable est interdite.
+            </p>
+            <p class="uf-legal__text">
+                Conception et design du site : Entryweb.
+            </p>
+        </section>
+
+        <section class="uf-legal__section">
+            <h2 class="uf-legal__heading">Données personnelles</h2>
+            <p class="uf-legal__text">
+                Les modalités de traitement des données personnelles collectées sur ce site sont détaillées dans la
+                <a href="{{ path('app_confidentialite') }}" class="uf-legal__link">politique de confidentialité</a>.
+            </p>
+        </section>
+
+        <section class="uf-legal__section">
+            <h2 class="uf-legal__heading">Contact</h2>
+            <p class="uf-legal__text">
+                Pour toute question relative au site, utilise le
+                <a href="{{ path('app_contact') }}" class="uf-legal__link">formulaire de contact</a>
+                ou appelle-nous au 04 72 00 00 00.
+            </p>
+        </section>
+    </div>
+{% endblock %}
