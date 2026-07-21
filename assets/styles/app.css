@@ -865,6 +865,77 @@ a:hover {
     height: 300px;
 }
 
+/* --- Histoire : galerie --- */
+
+.uf-gallery {
+    padding-bottom: 72px;
+}
+
+.uf-gallery__head {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.uf-gallery__title {
+    font-family: var(--uf-font-title);
+    font-size: clamp(32px, 4vw, 52px);
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: -0.5px;
+    font-weight: 400;
+}
+
+.uf-gallery__count {
+    font-family: var(--uf-font-mono);
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: rgb(20 20 18 / 50%);
+}
+
+.uf-gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 170px;
+    gap: 20px;
+}
+
+.uf-gallery__tile {
+    border: 2px solid var(--uf-ink);
+    background: var(--uf-photo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 12px;
+    font-family: var(--uf-font-mono);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: rgb(20 20 18 / 45%);
+}
+
+.uf-gallery__tile--tall {
+    grid-row: span 2;
+}
+
+@media (max-width: 900px) {
+    .uf-gallery__grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .uf-gallery__grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 200px;
+    }
+
+    .uf-gallery__tile--tall {
+        grid-row: auto;
+    }
+}
+
 /* --- Histoire : frise chronologique --- */
 
 .uf-timeline {

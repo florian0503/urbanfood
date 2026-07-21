@@ -52,6 +52,7 @@ final class PagesTest extends WebTestCase
         $client->request('GET', '/histoire');
 
         self::assertSelectorCount(4, '.uf-timeline__step');
+        self::assertSelectorCount(6, '.uf-gallery__tile');
         self::assertSelectorTextContains('.uf-page-head__title', "D'un camion");
     }
 
