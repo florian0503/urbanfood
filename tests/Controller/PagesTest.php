@@ -26,4 +26,13 @@ final class PagesTest extends WebTestCase
 
         self::assertResponseIsSuccessful();
     }
+
+    public function testNavIsPresentWithActiveLink(): void
+    {
+        $client = self::createClient();
+        $client->request('GET', '/carte');
+
+        self::assertSelectorExists('nav.uf-nav');
+        self::assertSelectorTextContains('.uf-nav__link--active', 'La carte');
+    }
 }

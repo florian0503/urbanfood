@@ -1,0 +1,15 @@
+{% set current_route = app.request.attributes.get('_route') %}
+<nav class="uf-nav">
+    <div class="uf-container uf-nav__inner">
+        <a href="{{ path('app_home') }}" class="uf-nav__brand">
+            <span class="uf-nav__logo">Urban's Food</span>
+            <span class="uf-nav__badge">DEPUIS 2021</span>
+        </a>
+        <div class="uf-nav__links">
+            <a href="{{ path('app_home') }}" class="uf-nav__link{% if current_route == 'app_home' %} uf-nav__link--active{% endif %}">Accueil</a>
+            <a href="{{ path('app_carte') }}" class="uf-nav__link{% if current_route == 'app_carte' %} uf-nav__link--active{% endif %}">La carte</a>
+            <a href="{{ path('app_histoire') }}" class="uf-nav__link{% if current_route == 'app_histoire' %} uf-nav__link--active{% endif %}">L'histoire</a>
+            <a href="{{ path('app_contact') }}" class="uf-nav__link{% if current_route == 'app_contact' %} uf-nav__link--active{% endif %}">Contact</a>
+        </div>
+    </div>
+</nav>

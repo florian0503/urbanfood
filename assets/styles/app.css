@@ -54,6 +54,110 @@ a:hover {
     padding-right: 32px;
 }
 
+/* --- Header / navigation --- */
+
+.uf-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--uf-paper);
+    border-bottom: 2px solid var(--uf-ink);
+}
+
+.uf-nav__inner {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 0;
+}
+
+.uf-nav__brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 0;
+    text-decoration: none;
+}
+
+.uf-nav__brand:hover {
+    color: var(--uf-ink);
+}
+
+.uf-nav__logo {
+    font-family: var(--uf-font-title);
+    font-size: 24px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.uf-nav__badge {
+    font-family: var(--uf-font-mono);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--uf-green);
+    border: 1.5px solid var(--uf-green);
+    border-radius: 999px;
+    padding: 3px 10px;
+    transform: rotate(-2deg);
+    white-space: nowrap;
+}
+
+.uf-nav__links {
+    display: flex;
+    align-items: stretch;
+}
+
+.uf-nav__link {
+    display: flex;
+    align-items: center;
+    font-family: var(--uf-font-mono);
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 0 22px;
+    text-decoration: none;
+    white-space: nowrap;
+    color: var(--uf-ink);
+    background: transparent;
+    border-left: 2px solid var(--uf-ink);
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.uf-nav__link--active {
+    color: var(--uf-paper);
+    background: var(--uf-green);
+}
+
+.uf-nav__link:hover {
+    background: var(--uf-ink);
+    color: var(--uf-paper);
+}
+
+@media (max-width: 860px) {
+    .uf-nav__inner {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .uf-nav__brand {
+        padding: 12px 0;
+    }
+
+    .uf-nav__links {
+        border-top: 2px solid var(--uf-ink);
+        margin: 0 -32px;
+    }
+
+    .uf-nav__link {
+        flex: 1;
+        justify-content: center;
+        padding: 12px 0;
+    }
+
+    .uf-nav__link:first-child {
+        border-left: none;
+    }
+}
+
 /* --- Apparition au scroll --- */
 
 [data-reveal] {
