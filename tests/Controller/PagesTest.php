@@ -27,6 +27,15 @@ final class PagesTest extends WebTestCase
         self::assertResponseIsSuccessful();
     }
 
+    public function testHomeShowsFeaturedItems(): void
+    {
+        $client = self::createClient();
+        $client->request('GET', '/');
+
+        self::assertSelectorCount(3, '.uf-featured__item');
+        self::assertSelectorTextContains('.uf-featured__list', 'Le Carnivore');
+    }
+
     public function testNavIsPresentWithActiveLink(): void
     {
         $client = self::createClient();
