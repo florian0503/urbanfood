@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520">
+    <!-- Texture graffiti ton sur ton : tags en contours tres transparents.
+         Creme = visible sur fond noir et vert / encre = visible sur fond vert. -->
+    <g fill="none" font-family="Impact, 'Arial Black', sans-serif" font-weight="900">
+        <text x="30" y="120" font-size="92" stroke="#F2EFE7" stroke-opacity="0.07" stroke-width="2.5" transform="rotate(-8 30 120)" font-style="italic">UF</text>
+        <text x="230" y="90" font-size="44" stroke="#F2EFE7" stroke-opacity="0.06" stroke-width="2" transform="rotate(4 230 90)">SMASH</text>
+        <text x="470" y="150" font-size="56" stroke="#141412" stroke-opacity="0.10" stroke-width="2.5" transform="rotate(-12 470 150)" font-style="italic">TACOS</text>
+        <text x="90" y="300" font-size="38" stroke="#6FBF7F" stroke-opacity="0.09" stroke-width="2" transform="rotate(6 90 300)">FAIT MAISON</text>
+        <text x="420" y="330" font-size="80" stroke="#F2EFE7" stroke-opacity="0.055" stroke-width="2.5" transform="rotate(9 420 330)" font-style="italic">UF</text>
+        <text x="180" y="460" font-size="50" stroke="#141412" stroke-opacity="0.09" stroke-width="2.5" transform="rotate(-5 180 460)">URBAN'S</text>
+        <text x="560" y="470" font-size="34" stroke="#F2EFE7" stroke-opacity="0.06" stroke-width="2" transform="rotate(-14 560 470)">DOUZE SAUCES</text>
+    </g>
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Couronne -->
+        <path d="M600 60 l10 -22 10 14 10 -20 10 20 10 -14 10 22 z" stroke="#F2EFE7" stroke-opacity="0.08" stroke-width="2.5" transform="rotate(8 630 50)"/>
+        <!-- Etoile -->
+        <path d="M320 220 l7 16 17 2 -12 12 3 17 -15 -8 -15 8 3 -17 -12 -12 17 -2 z" stroke="#6FBF7F" stroke-opacity="0.10" stroke-width="2" transform="rotate(-10 320 235)"/>
+        <path d="M660 260 l5 12 13 1 -9 9 2 13 -11 -6 -11 6 2 -13 -9 -9 13 -1 z" stroke="#141412" stroke-opacity="0.10" stroke-width="2"/>
+        <!-- Fleche -->
+        <path d="M60 380 q60 -40 130 -10 M170 358 l22 10 -20 14" stroke="#F2EFE7" stroke-opacity="0.07" stroke-width="2.5"/>
+        <!-- Soulignements marker -->
+        <path d="M240 130 q60 14 130 2" stroke="#141412" stroke-opacity="0.08" stroke-width="4"/>
+        <path d="M440 360 q50 12 110 0" stroke="#F2EFE7" stroke-opacity="0.05" stroke-width="4"/>
+        <!-- Gribouillis -->
+        <path d="M540 210 q14 -18 28 0 q14 18 28 0 q14 -18 28 0" stroke="#F2EFE7" stroke-opacity="0.06" stroke-width="2.5"/>
+    </g>
+    <!-- Points de spray -->
+    <g fill="#F2EFE7" fill-opacity="0.06">
+        <circle cx="150" cy="180" r="4"/><circle cx="166" cy="170" r="2.5"/><circle cx="140" cy="165" r="2"/>
+        <circle cx="700" cy="380" r="4"/><circle cx="688" cy="392" r="2.5"/><circle cx="710" cy="395" r="2"/>
+        <circle cx="380" cy="60" r="3"/><circle cx="394" cy="52" r="2"/>
+    </g>
+    <g fill="#141412" fill-opacity="0.09">
+        <circle cx="60" cy="240" r="3.5"/><circle cx="74" cy="232" r="2"/>
+        <circle cx="520" cy="430" r="3.5"/><circle cx="534" cy="440" r="2"/>
+    </g>
+</svg>
