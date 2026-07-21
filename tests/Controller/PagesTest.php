@@ -126,6 +126,18 @@ final class PagesTest extends WebTestCase
         self::assertSelectorExists('meta[name="robots"][content="noindex"]');
     }
 
+    public function testCookieBannerIsPresent(): void
+    {
+        $client = self::createClient();
+        $client->request('GET', '/');
+
+        self::assertSelectorExists('.uf-cookies');
+        self::assertSelectorExists('.uf-cookies .uf-cookies__accept');
+        self::assertSelectorExists('.uf-cookies .uf-cookies__refuse');
+        self::assertSelectorExists('.uf-cookies .uf-cookies__custom');
+        self::assertSelectorExists('button.uf-cookies-manage');
+    }
+
     public function testScrollTopButtonIsPresent(): void
     {
         $client = self::createClient();
