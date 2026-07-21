@@ -15,4 +15,19 @@ class ContactMessageRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, ContactMessage::class);
     }
+
+    /**
+     * Supprime les messages plus anciens que la date donnee (retention RGPD).
+     *
+     * @return int Nombre de messages supprimes
+     */
+    public function purgeOlderThan(\DateTimeImmutable $before): int
+    {
+        return (int) $this->createQueryBuilder('m')
+            ->delete()
+            ->where('m.createdAt < :before')
+            ->setParameter('before', $before)
+            ->getQuery()
+            ->execute();
+    }
 }
