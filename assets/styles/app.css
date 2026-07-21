@@ -1666,6 +1666,41 @@ a:hover {
         font-size: 15vw;
         letter-spacing: -1px;
     }
+
+    /* Footer compact : on va a l'essentiel (adresse, horaires, plan) */
+    .uf-footer__main {
+        padding-top: 56px;
+        padding-bottom: 44px;
+        gap: 40px;
+    }
+
+    .uf-footer__meta {
+        gap: 32px;
+        margin-top: 28px;
+        padding-top: 24px;
+    }
+
+    /* Redondant avec la nav sticky et le bouton retour en haut */
+    .uf-footer__nav {
+        display: none;
+    }
+
+    .uf-footer__map-wrap {
+        padding: 0 8px 8px 0;
+    }
+
+    .uf-footer__map-frame {
+        height: 240px;
+    }
+
+    .uf-footer__stamp {
+        display: none;
+    }
+
+    .uf-footer__credits-inner {
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
 }
 
 /* --- Titres geants : respiration sur petit ecran --- */
