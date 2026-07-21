@@ -88,12 +88,29 @@ function setupScrollTop() {
         return;
     }
 
+    const darkSections = document.querySelectorAll('.uf-hero, .uf-manifesto, .uf-footer');
+
     const update = () => {
         button.classList.toggle('uf-totop--visible', window.scrollY > 600);
+
+        // Sur fond sombre, le bouton passe du noir au vert pour rester visible.
+        const rect = button.getBoundingClientRect();
+        let overDark = false;
+
+        darkSections.forEach((section) => {
+            const sectionRect = section.getBoundingClientRect();
+
+            if (sectionRect.top < rect.bottom && sectionRect.bottom > rect.top) {
+                overDark = true;
+            }
+        });
+
+        button.classList.toggle('uf-totop--invert', overDark);
     };
 
     update();
     window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update, { passive: true });
 
     button.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
