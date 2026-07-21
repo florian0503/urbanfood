@@ -46,6 +46,15 @@ final class PagesTest extends WebTestCase
         self::assertSelectorTextContains('.uf-student__title', 'Formule étudiant');
     }
 
+    public function testHistoireShowsTimeline(): void
+    {
+        $client = self::createClient();
+        $client->request('GET', '/histoire');
+
+        self::assertSelectorCount(4, '.uf-timeline__step');
+        self::assertSelectorTextContains('.uf-page-head__title', "D'un camion");
+    }
+
     public function testNavIsPresentWithActiveLink(): void
     {
         $client = self::createClient();
