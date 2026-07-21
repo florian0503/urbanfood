@@ -1431,6 +1431,19 @@ a:hover {
     background: var(--uf-green);
 }
 
+/* Variante sur fond sombre (hero, manifeste, footer) : noir -> vert */
+
+.uf-totop--invert {
+    background: var(--uf-green);
+    border-color: var(--uf-green);
+    box-shadow: 6px 6px 0 var(--uf-paper);
+}
+
+.uf-totop--invert:hover {
+    background: var(--uf-green-light);
+    color: var(--uf-ink);
+}
+
 /* --- Apparition au scroll --- */
 
 [data-reveal] {
