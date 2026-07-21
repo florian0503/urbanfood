@@ -434,7 +434,7 @@ a:hover {
     font-family: var(--uf-font-mono);
     font-size: 12px;
     letter-spacing: 1.5px;
-    color: rgb(20 20 18 / 50%);
+    color: rgb(20 20 18 / 62%);
 }
 
 .uf-featured__list {
@@ -463,7 +463,7 @@ a:hover {
 .uf-featured__num {
     font-family: var(--uf-font-mono);
     font-size: 13px;
-    color: rgb(20 20 18 / 45%);
+    color: rgb(20 20 18 / 62%);
 }
 
 .uf-featured__info {
@@ -652,7 +652,7 @@ a:hover {
     font-family: var(--uf-font-mono);
     font-size: 12px;
     letter-spacing: 2px;
-    color: rgb(20 20 18 / 50%);
+    color: rgb(20 20 18 / 62%);
     margin-bottom: 10px;
 }
 
@@ -765,7 +765,7 @@ a:hover {
 
 .uf-menu__desc {
     font-size: 13.5px;
-    color: rgb(20 20 18 / 58%);
+    color: rgb(20 20 18 / 65%);
     margin-top: 4px;
     font-style: italic;
 }
@@ -799,7 +799,7 @@ a:hover {
     font-size: 12.5px;
     letter-spacing: 1px;
     margin-top: 8px;
-    color: rgb(242 239 231 / 85%);
+    color: var(--uf-paper);
 }
 
 .uf-student__cta {
@@ -869,7 +869,7 @@ a:hover {
     font-family: var(--uf-font-mono);
     font-size: 11px;
     letter-spacing: 1.5px;
-    color: rgb(20 20 18 / 45%);
+    color: rgb(20 20 18 / 62%);
 }
 
 .uf-story__photo--tall {
@@ -902,7 +902,7 @@ a:hover {
     font-family: var(--uf-font-mono);
     font-size: 12px;
     letter-spacing: 1.5px;
-    color: rgb(20 20 18 / 50%);
+    color: rgb(20 20 18 / 62%);
 }
 
 .uf-gallery__grid {
@@ -923,7 +923,7 @@ a:hover {
     font-family: var(--uf-font-mono);
     font-size: 11px;
     letter-spacing: 1.5px;
-    color: rgb(20 20 18 / 45%);
+    color: rgb(20 20 18 / 62%);
 }
 
 .uf-gallery__tile--tall {
@@ -964,7 +964,7 @@ a:hover {
     font-family: var(--uf-font-mono);
     font-size: 12px;
     letter-spacing: 2px;
-    color: rgb(242 239 231 / 85%);
+    color: var(--uf-paper);
     margin-bottom: 40px;
 }
 
@@ -998,7 +998,7 @@ a:hover {
     margin: 0;
     font-size: 14px;
     line-height: 1.65;
-    color: rgb(242 239 231 / 80%);
+    color: var(--uf-paper);
 }
 
 @media (max-width: 900px) {
@@ -1107,7 +1107,7 @@ a:hover {
     font-family: var(--uf-font-mono);
     font-size: 11px;
     letter-spacing: 1.5px;
-    color: rgb(20 20 18 / 45%);
+    color: rgb(20 20 18 / 62%);
     margin-top: 28px;
 }
 
@@ -1132,7 +1132,7 @@ a:hover {
     font-family: var(--uf-font-mono);
     font-size: 12px;
     letter-spacing: 1px;
-    color: rgb(20 20 18 / 50%);
+    color: rgb(20 20 18 / 62%);
     margin: 0 0 32px;
 }
 
@@ -1198,7 +1198,7 @@ a:hover {
 .uf-form__rgpd {
     font-size: 12.5px;
     line-height: 1.6;
-    color: rgb(20 20 18 / 55%);
+    color: rgb(20 20 18 / 65%);
     margin: 4px 0 0;
 }
 
@@ -1458,7 +1458,7 @@ a:hover {
     font-family: var(--uf-font-mono);
     font-size: 10.5px;
     letter-spacing: 2px;
-    color: rgb(242 239 231 / 45%);
+    color: rgb(242 239 231 / 65%);
     margin-bottom: 12px;
 }
 
@@ -1624,7 +1624,7 @@ a:hover {
     font-family: var(--uf-font-mono);
     font-size: 11px;
     letter-spacing: 1.5px;
-    color: rgb(242 239 231 / 45%);
+    color: rgb(242 239 231 / 65%);
 }
 
 .uf-footer__credits-link {
