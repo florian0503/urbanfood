@@ -1,0 +1,14 @@
+framework:
+    rate_limiter:
+        # Formulaire de contact : 5 envois max par IP toutes les 15 minutes
+        # (en complement du honeypot anti-bot).
+        contact_form:
+            policy: 'fixed_window'
+            limit: 5
+            interval: '15 minutes'
+
+when@test:
+    framework:
+        rate_limiter:
+            contact_form:
+                policy: 'no_limit'
