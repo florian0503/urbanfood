@@ -1643,6 +1643,47 @@ a:hover {
     flex-wrap: wrap;
 }
 
+/* Liens utilitaires : discrets, ils ne doivent pas voler la vedette */
+
+.uf-footer__legal-link {
+    color: rgb(242 239 231 / 55%);
+    text-decoration: none;
+    border-bottom: 1.5px solid rgb(242 239 231 / 20%);
+    padding-bottom: 2px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.uf-footer__legal-link:hover {
+    color: var(--uf-green-light);
+    border-color: var(--uf-green-light);
+}
+
+/* Credit Entryweb : badge sticker qui accroche l'oeil */
+
+.uf-footer__made {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.uf-footer__entryweb {
+    display: inline-block;
+    font-weight: 600;
+    color: var(--uf-paper);
+    background: var(--uf-green);
+    padding: 6px 12px;
+    text-decoration: none;
+    transform: rotate(-2deg);
+    box-shadow: 3px 3px 0 var(--uf-green-light);
+    transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.uf-footer__entryweb:hover {
+    background: var(--uf-green-light);
+    color: var(--uf-ink);
+    transform: rotate(0deg) translate(-1px, -1px);
+}
+
 .uf-footer__credits-link {
     color: var(--uf-green-light);
     text-decoration: none;
