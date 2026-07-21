@@ -3,4 +3,63 @@
 {% block title %}Contact — Urban's Food{% endblock %}
 
 {% block body %}
+    <header class="uf-page-head">
+        <div class="uf-container uf-page-head__inner">
+            <div data-reveal="0" class="uf-page-head__label">CONTACT — ON RÉPOND VITE</div>
+            <h1 data-reveal="80" class="uf-page-head__title">Passe nous voir<span class="uf-page-head__accent">.</span></h1>
+        </div>
+    </header>
+
+    <div class="uf-container uf-contact">
+        <div class="uf-contact__infos">
+            <div data-reveal="0" class="uf-contact__block uf-contact__block--first">
+                <div class="uf-contact__label">ADRESSE</div>
+                <div class="uf-contact__big">12 rue de la République<br>69007 Lyon</div>
+                <div class="uf-contact__note">Métro D — Guillotière, sortie place Gabriel-Péri</div>
+            </div>
+            <div data-reveal="100" class="uf-contact__block">
+                <div class="uf-contact__label">HORAIRES</div>
+                <div class="uf-contact__hours">
+                    <div class="uf-contact__hours-row"><span>Lundi — Jeudi</span><span class="uf-contact__hours-dots"></span><span class="uf-contact__hours-time">11h — 22h30</span></div>
+                    <div class="uf-contact__hours-row"><span>Vendredi — Samedi</span><span class="uf-contact__hours-dots"></span><span class="uf-contact__hours-time">11h — 23h30</span></div>
+                    <div class="uf-contact__hours-row"><span>Dimanche</span><span class="uf-contact__hours-dots"></span><span class="uf-contact__hours-time">12h — 22h</span></div>
+                </div>
+            </div>
+            <div data-reveal="200" class="uf-contact__block uf-contact__block--last">
+                <div class="uf-contact__label">TÉLÉPHONE &amp; RÉSEAUX</div>
+                <div class="uf-contact__big uf-contact__big--phone">04 72 00 00 00</div>
+                <div class="uf-contact__note">@urbansfood — réponses rapides en DM</div>
+            </div>
+            <div data-reveal="300" class="uf-contact__map">
+                <span>[ plan d'accès ]</span>
+            </div>
+        </div>
+
+        <div data-reveal="120" class="uf-form">
+            <h2 class="uf-form__title">Un message ?</h2>
+            <p class="uf-form__sub">privatisation · événement · question</p>
+            {{ form_start(form, {attr: {class: 'uf-form__fields'}}) }}
+                <div class="uf-form__grid">
+                    <div>
+                        {{ form_errors(form.name) }}
+                        {{ form_widget(form.name, {attr: {class: 'uf-form__input', placeholder: 'Nom', 'aria-label': 'Nom'}}) }}
+                    </div>
+                    <div>
+                        {{ form_errors(form.email) }}
+                        {{ form_widget(form.email, {attr: {class: 'uf-form__input', placeholder: 'Email', 'aria-label': 'Email'}}) }}
+                    </div>
+                </div>
+                {{ form_errors(form.subject) }}
+                {{ form_widget(form.subject, {attr: {class: 'uf-form__input', placeholder: 'Sujet', 'aria-label': 'Sujet'}}) }}
+                {{ form_errors(form.message) }}
+                {{ form_widget(form.message, {attr: {class: 'uf-form__input uf-form__input--area', placeholder: 'Ton message…', rows: 5, 'aria-label': 'Ton message'}}) }}
+                <div class="uf-form__trap" aria-hidden="true">
+                    {{ form_widget(form.website, {attr: {tabindex: '-1', autocomplete: 'off'}}) }}
+                </div>
+                <button type="submit" class="uf-form__submit">
+                    {%- if app.flashes('contact_sent')|length > 0 -%}Envoyé ✓{%- else -%}Envoyer{%- endif -%}
+                </button>
+            {{ form_end(form) }}
+        </div>
+    </div>
 {% endblock %}
