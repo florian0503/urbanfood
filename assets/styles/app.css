@@ -1685,6 +1685,10 @@ a:hover {
         display: none;
     }
 
+    .uf-footer__metro {
+        display: none;
+    }
+
     .uf-footer__map-wrap {
         padding: 0 8px 8px 0;
     }
