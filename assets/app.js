@@ -249,6 +249,36 @@ function setupOpenBadge() {
     setInterval(update, 60000);
 }
 
+/*
+ * Mesure d'audience : ne se charge que si un domaine est configure
+ * (PLAUSIBLE_DOMAIN) ET que le visiteur a consenti aux cookies
+ * "statistiques". Reagit aussi au consentement donne apres coup.
+ */
+function loadAnalytics() {
+    if (!window.ufAnalytics || window.ufAnalytics.loaded) {
+        return;
+    }
+
+    if (!window.ufConsent || !window.ufConsent.isGranted('statistics')) {
+        return;
+    }
+
+    const script = document.createElement('script');
+    script.defer = true;
+    script.src = 'https://plausible.io/js/script.js';
+    script.dataset.domain = window.ufAnalytics.domain;
+    document.head.appendChild(script);
+    window.ufAnalytics.loaded = true;
+}
+
+function setupAnalytics() {
+    loadAnalytics();
+
+    document.addEventListener('uf:consent', () => {
+        loadAnalytics();
+    });
+}
+
 function init() {
     setupReveal();
     setupVideo();
@@ -256,6 +286,7 @@ function init() {
     setupScrollTop();
     setupCookieConsent();
     setupOpenBadge();
+    setupAnalytics();
 }
 
 // Le module peut etre execute avant ou apres DOMContentLoaded
