@@ -96,6 +96,36 @@ final class PagesTest extends WebTestCase
         self::assertSelectorExists('.uf-form__rgpd a[href="/confidentialite"]');
     }
 
+    public function testSitemapListsPublicPages(): void
+    {
+        $client = self::createClient();
+        $client->request('GET', '/sitemap.xml');
+
+        self::assertResponseIsSuccessful();
+        self::assertResponseHeaderSame('Content-Type', 'application/xml; charset=utf-8');
+        $content = (string) $client->getResponse()->getContent();
+        self::assertStringContainsString('/carte</loc>', $content);
+        self::assertStringNotContainsString('/admin', $content);
+    }
+
+    public function testHomeHasStructuredData(): void
+    {
+        $client = self::createClient();
+        $client->request('GET', '/');
+
+        $content = (string) $client->getResponse()->getContent();
+        self::assertStringContainsString('application/ld+json', $content);
+        self::assertStringContainsString('"@type": "Restaurant"', $content);
+    }
+
+    public function testLoginIsNoindex(): void
+    {
+        $client = self::createClient();
+        $client->request('GET', '/login');
+
+        self::assertSelectorExists('meta[name="robots"][content="noindex"]');
+    }
+
     public function testScrollTopButtonIsPresent(): void
     {
         $client = self::createClient();

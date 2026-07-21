@@ -1,5 +1,53 @@
 {% extends 'base.html.twig' %}
 
+{% block javascripts %}
+    {{ parent() }}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Urban's Food",
+        "url": "{{ app.request.schemeAndHttpHost }}",
+        "telephone": "+33472000000",
+        "servesCuisine": ["Street food", "Tacos", "Smash burgers"],
+        "priceRange": "€",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "12 rue de la République",
+            "postalCode": "69007",
+            "addressLocality": "Lyon",
+            "addressCountry": "FR"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 45.7555,
+            "longitude": 4.8430
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+                "opens": "11:00",
+                "closes": "22:30"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Friday", "Saturday"],
+                "opens": "11:00",
+                "closes": "23:30"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Sunday",
+                "opens": "12:00",
+                "closes": "22:00"
+            }
+        ],
+        "hasMenu": "{{ url('app_carte') }}"
+    }
+    </script>
+{% endblock %}
+
 {% block body %}
     <header class="uf-hero">
         <div class="uf-hero__placeholder">

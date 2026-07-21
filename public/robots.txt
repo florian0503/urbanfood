@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin
+Disallow: /login
+Allow: /
+
+# A activer une fois le domaine de production connu :
+# Sitemap: https://www.exemple.fr/sitemap.xml
