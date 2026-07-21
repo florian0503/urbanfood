@@ -3,4 +3,43 @@
 {% block title %}La Carte — Urban's Food{% endblock %}
 
 {% block body %}
+    <header class="uf-page-head">
+        <div class="uf-container uf-page-head__inner">
+            <div data-reveal="0" class="uf-page-head__label">LA CARTE — MISE À JOUR JUILLET 2026</div>
+            <h1 data-reveal="80" class="uf-page-head__title uf-page-head__title--xl">Tout est<br><span class="uf-page-head__accent">préparé minute.</span></h1>
+        </div>
+    </header>
+
+    <div class="uf-container uf-menu">
+        {% for category in categories %}
+            <section data-reveal="{{ loop.index0 * 100 }}" class="uf-menu__cat">
+                <div class="uf-menu__cat-head">
+                    <h2 class="uf-menu__cat-title">{{ category.name }}</h2>
+                    <span class="uf-menu__cat-tag">{{ category.tag }}</span>
+                </div>
+                <div class="uf-menu__items">
+                    {% for item in category.items %}
+                        <div class="uf-menu__item">
+                            <div class="uf-menu__row">
+                                <span class="uf-menu__name">{{ item.name }}</span>
+                                <span class="uf-menu__dots"></span>
+                                <span class="uf-menu__price">{{ item.price }}</span>
+                            </div>
+                            <div class="uf-menu__desc">{{ item.description }}</div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </section>
+        {% endfor %}
+    </div>
+
+    <section class="uf-student">
+        <div class="uf-container uf-student__inner">
+            <div>
+                <div data-reveal="0" class="uf-student__title">Formule étudiant — 8,90 €</div>
+                <div data-reveal="80" class="uf-student__sub">1 tacos ou smash classique + frites + boisson · sur présentation de la carte</div>
+            </div>
+            <a data-reveal="160" href="{{ path('app_contact') }}" class="uf-student__cta">Nous trouver →</a>
+        </div>
+    </section>
 {% endblock %}

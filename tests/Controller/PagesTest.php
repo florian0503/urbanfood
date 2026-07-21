@@ -36,6 +36,16 @@ final class PagesTest extends WebTestCase
         self::assertSelectorTextContains('.uf-featured__list', 'Le Carnivore');
     }
 
+    public function testCarteShowsAllCategories(): void
+    {
+        $client = self::createClient();
+        $client->request('GET', '/carte');
+
+        self::assertSelectorCount(4, '.uf-menu__cat');
+        self::assertSelectorTextContains('.uf-menu', 'Tacos');
+        self::assertSelectorTextContains('.uf-student__title', 'Formule étudiant');
+    }
+
     public function testNavIsPresentWithActiveLink(): void
     {
         $client = self::createClient();

@@ -554,6 +554,189 @@ a:hover {
     }
 }
 
+/* --- En-tete de page interieure --- */
+
+.uf-page-head {
+    border-bottom: 2px solid var(--uf-ink);
+}
+
+.uf-page-head__inner {
+    padding-top: 64px;
+    padding-bottom: 48px;
+}
+
+.uf-page-head__label {
+    font-family: var(--uf-font-mono);
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: rgb(20 20 18 / 50%);
+    margin-bottom: 10px;
+}
+
+.uf-page-head__title {
+    font-family: var(--uf-font-title);
+    font-size: clamp(56px, 8vw, 120px);
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 0.87;
+    letter-spacing: -1px;
+    font-weight: 400;
+}
+
+.uf-page-head__title--xl {
+    font-size: clamp(64px, 9vw, 140px);
+    line-height: 0.85;
+}
+
+.uf-page-head__accent {
+    color: var(--uf-green);
+}
+
+/* --- La Carte : grille categories --- */
+
+.uf-menu {
+    padding-top: 72px;
+    padding-bottom: 72px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    align-items: start;
+}
+
+.uf-menu__cat {
+    border: 2px solid var(--uf-ink);
+    background: var(--uf-card);
+    padding: 36px 36px 30px;
+    box-shadow: 6px 6px 0 var(--uf-shadow);
+}
+
+.uf-menu__cat-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 2px solid var(--uf-ink);
+    padding-bottom: 14px;
+    margin-bottom: 8px;
+}
+
+.uf-menu__cat-title {
+    font-family: var(--uf-font-title);
+    font-size: 32px;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+}
+
+.uf-menu__cat-tag {
+    font-family: var(--uf-font-mono);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: var(--uf-green);
+}
+
+.uf-menu__items {
+    display: flex;
+    flex-direction: column;
+}
+
+.uf-menu__item {
+    padding: 16px 0;
+    border-bottom: 1px dashed rgb(20 20 18 / 30%);
+    transition: padding-left 0.18s ease;
+}
+
+.uf-menu__item:hover {
+    padding-left: 10px;
+}
+
+.uf-menu__row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.uf-menu__name {
+    font-weight: 700;
+    font-size: 16.5px;
+}
+
+.uf-menu__dots {
+    flex: 1;
+    border-bottom: 2px dotted rgb(20 20 18 / 35%);
+    transform: translateY(-4px);
+}
+
+.uf-menu__price {
+    font-family: var(--uf-font-mono);
+    font-weight: 600;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.uf-menu__desc {
+    font-size: 13.5px;
+    color: rgb(20 20 18 / 58%);
+    margin-top: 4px;
+    font-style: italic;
+}
+
+/* --- La Carte : formule etudiant --- */
+
+.uf-student {
+    border-top: 2px solid var(--uf-ink);
+    background: var(--uf-green);
+    color: var(--uf-paper);
+}
+
+.uf-student__inner {
+    padding-top: 56px;
+    padding-bottom: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.uf-student__title {
+    font-family: var(--uf-font-title);
+    font-size: clamp(28px, 3vw, 42px);
+    text-transform: uppercase;
+}
+
+.uf-student__sub {
+    font-family: var(--uf-font-mono);
+    font-size: 12.5px;
+    letter-spacing: 1px;
+    margin-top: 8px;
+    color: rgb(242 239 231 / 85%);
+}
+
+.uf-student__cta {
+    font-family: var(--uf-font-title);
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--uf-green);
+    background: var(--uf-paper);
+    padding: 15px 30px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform 0.15s ease;
+}
+
+.uf-student__cta:hover {
+    transform: translate(-2px, -2px);
+    color: var(--uf-green);
+}
+
+@media (max-width: 900px) {
+    .uf-menu {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* --- Footer --- */
 
 .uf-footer {
