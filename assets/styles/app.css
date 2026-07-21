@@ -500,6 +500,43 @@ a:hover {
     font-size: 26px;
 }
 
+/* --- Accueil : bandeau photo du mur graffe --- */
+
+.uf-wall {
+    position: relative;
+    border-top: 2px solid var(--uf-ink);
+    border-bottom: 2px solid var(--uf-ink);
+    background: var(--uf-photo);
+    height: clamp(240px, 34vw, 380px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.uf-wall__tag {
+    position: absolute;
+    top: 20px;
+    left: 32px;
+    font-family: var(--uf-font-mono);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    background: var(--uf-paper);
+    border: 2px solid var(--uf-ink);
+    padding: 6px 14px;
+    transform: rotate(-2deg);
+    box-shadow: 4px 4px 0 var(--uf-ink);
+}
+
+.uf-wall__placeholder {
+    font-family: var(--uf-font-mono);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: rgb(20 20 18 / 62%);
+    text-align: center;
+    padding: 0 24px;
+}
+
 /* --- Accueil : manifeste --- */
 
 .uf-manifesto {

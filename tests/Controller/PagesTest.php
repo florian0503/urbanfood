@@ -34,6 +34,7 @@ final class PagesTest extends WebTestCase
 
         self::assertSelectorCount(3, '.uf-featured__item');
         self::assertSelectorTextContains('.uf-featured__list', 'Le Carnivore');
+        self::assertSelectorExists('.uf-wall');
     }
 
     public function testCarteShowsAllCategories(): void
