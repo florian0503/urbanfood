@@ -1,0 +1,15 @@
+includes:
+    - vendor/phpstan/phpstan-symfony/extension.neon
+
+parameters:
+    level: 6
+    paths:
+        - src
+        - tests
+    ignoreErrors:
+        # Faux positif : getAllowedEnvs() est appelee par le framework via KernelTrait
+        # (symfony/dependency-injection), PHPStan ne voit pas cet usage a travers le trait.
+        -
+            identifier: method.unused
+            path: src/Kernel.php
+            count: 1

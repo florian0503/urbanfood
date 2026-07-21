@@ -1,0 +1,56 @@
+name: CI
+
+# Se declenche a chaque push et pull request sur main
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    name: Qualite du code
+    runs-on: ubuntu-latest
+
+    env:
+      APP_ENV: test
+      # Base SQLite dediee aux tests (aucun serveur de base a demarrer)
+      DATABASE_URL: "sqlite:///%kernel.project_dir%/var/test.db"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Installer PHP 8.4
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: mbstring, xml, ctype, iconv, intl, pdo_sqlite
+          coverage: none
+          tools: composer:v2
+
+      - name: Valider composer.json
+        run: composer validate --strict
+
+      - name: Installer les dependances
+        uses: ramsey/composer-install@v3
+
+      - name: Audit securite des dependances
+        run: composer audit
+
+      - name: Analyse statique (PHPStan)
+        run: vendor/bin/phpstan analyse --no-progress
+
+      - name: Style PHP (PHP-CS-Fixer)
+        run: vendor/bin/php-cs-fixer fix --dry-run --diff
+        env:
+          PHP_CS_FIXER_IGNORE_ENV: 1
+
+      - name: Style Twig (Twig-CS-Fixer)
+        run: vendor/bin/twig-cs-fixer lint
+
+      - name: Tests (PHPUnit)
+        run: vendor/bin/phpunit
