@@ -1742,6 +1742,32 @@ a:hover {
     transform: none;
 }
 
+/* --- Animations reduites : respecter la preference utilisateur --- */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    [data-reveal] {
+        opacity: 1;
+        transform: none;
+    }
+
+    .uf-marquee__track {
+        animation: none !important;
+        width: auto;
+    }
+
+    .uf-hero__stamp {
+        animation: none !important;
+    }
+}
+
 /* --- Animations --- */
 
 @keyframes uf-marquee {
