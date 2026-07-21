@@ -24,6 +24,9 @@
         {% block javascripts %}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
+        {% if plausible_domain %}
+            <script>window.ufAnalytics = { provider: 'plausible', domain: {{ plausible_domain|json_encode|raw }} };</script>
+        {% endif %}
 
     </head>
     <body>

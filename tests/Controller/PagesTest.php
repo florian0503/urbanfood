@@ -127,6 +127,14 @@ final class PagesTest extends WebTestCase
         self::assertSelectorExists('meta[name="robots"][content="noindex"]');
     }
 
+    public function testAnalyticsIsDisabledWithoutDomain(): void
+    {
+        $client = self::createClient();
+        $client->request('GET', '/');
+
+        self::assertStringNotContainsString('ufAnalytics', (string) $client->getResponse()->getContent());
+    }
+
     public function testHomeHasOpenBadge(): void
     {
         $client = self::createClient();
