@@ -1,5 +1,5 @@
 {% set current_route = app.request.attributes.get('_route') %}
-<nav class="uf-nav">
+<nav class="uf-nav{% if current_route == 'app_home' %} uf-nav--overlay{% endif %}">
     <div class="uf-container uf-nav__inner">
         <a href="{{ path('app_home') }}" class="uf-nav__brand">
             <span class="uf-nav__logo">Urban's Food</span>

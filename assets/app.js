@@ -58,7 +58,27 @@ function setupVideo() {
     }, true);
 }
 
+/*
+ * Nav transparente (accueil) : redevient creme avec bordure
+ * des que l'utilisateur commence a scroller.
+ */
+function setupNavOverlay() {
+    const nav = document.querySelector('.uf-nav--overlay');
+
+    if (!nav) {
+        return;
+    }
+
+    const update = () => {
+        nav.classList.toggle('uf-nav--scrolled', window.scrollY > 40);
+    };
+
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     setupReveal();
     setupVideo();
+    setupNavOverlay();
 });
