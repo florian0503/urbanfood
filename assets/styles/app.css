@@ -737,6 +737,128 @@ a:hover {
     }
 }
 
+/* --- Histoire : recit --- */
+
+.uf-story {
+    padding-top: 72px;
+    padding-bottom: 72px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+}
+
+.uf-story__lead {
+    font-size: 19px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+    font-weight: 500;
+}
+
+.uf-story__text {
+    font-size: 16px;
+    line-height: 1.75;
+    margin: 0 0 24px;
+    color: rgb(20 20 18 / 72%);
+}
+
+.uf-story__text--last {
+    margin-bottom: 0;
+}
+
+.uf-story__visuals {
+    display: grid;
+    gap: 20px;
+}
+
+.uf-story__photo {
+    border: 2px solid var(--uf-ink);
+    height: 220px;
+    background: var(--uf-photo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--uf-font-mono);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: rgb(20 20 18 / 45%);
+}
+
+.uf-story__photo--tall {
+    height: 300px;
+}
+
+/* --- Histoire : frise chronologique --- */
+
+.uf-timeline {
+    border-top: 2px solid var(--uf-ink);
+    background: var(--uf-green);
+    color: var(--uf-paper);
+}
+
+.uf-timeline__inner {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.uf-timeline__label {
+    font-family: var(--uf-font-mono);
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: rgb(242 239 231 / 85%);
+    margin-bottom: 40px;
+}
+
+.uf-timeline__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+}
+
+.uf-timeline__step {
+    border-left: 1.5px solid rgb(242 239 231 / 40%);
+    padding: 8px 28px 8px 24px;
+}
+
+.uf-timeline__year {
+    font-family: var(--uf-font-title);
+    font-size: 48px;
+    color: var(--uf-ink);
+    line-height: 1;
+}
+
+.uf-timeline__title {
+    font-family: var(--uf-font-title);
+    font-size: 19px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 14px 0 10px;
+}
+
+.uf-timeline__text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.65;
+    color: rgb(242 239 231 / 80%);
+}
+
+@media (max-width: 900px) {
+    .uf-story {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .uf-timeline__grid {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .uf-timeline__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* --- Footer --- */
 
 .uf-footer {
