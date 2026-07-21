@@ -355,6 +355,11 @@ a:hover {
 
 .uf-hero__cta-arrow {
     font-family: var(--uf-font-mono);
+    transition: transform 0.18s ease;
+}
+
+.uf-hero__cta:hover .uf-hero__cta-arrow {
+    transform: translateX(4px);
 }
 
 .uf-hero__stamp {
@@ -686,6 +691,12 @@ a:hover {
     background: var(--uf-card);
     padding: 36px 36px 30px;
     box-shadow: 6px 6px 0 var(--uf-shadow);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.uf-menu__cat:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 10px 10px 0 var(--uf-shadow);
 }
 
 .uf-menu__cat-head {
@@ -1495,6 +1506,11 @@ a:hover {
     transform: rotate(-1deg);
     overflow: hidden;
     background: var(--uf-photo);
+    transition: transform 0.25s ease;
+}
+
+.uf-footer__map-wrap:hover .uf-footer__map-frame {
+    transform: rotate(0deg);
 }
 
 .uf-footer__map-iframe {
