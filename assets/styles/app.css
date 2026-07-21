@@ -1396,6 +1396,41 @@ a:hover {
     }
 }
 
+/* --- Bouton retour en haut --- */
+
+.uf-totop {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 40;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--uf-font-mono);
+    font-size: 20px;
+    color: var(--uf-paper);
+    background: var(--uf-ink);
+    border: 2px solid var(--uf-ink);
+    box-shadow: 6px 6px 0 var(--uf-green);
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(16px);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease, background 0.15s ease;
+}
+
+.uf-totop--visible {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+}
+
+.uf-totop:hover {
+    background: var(--uf-green);
+}
+
 /* --- Apparition au scroll --- */
 
 [data-reveal] {

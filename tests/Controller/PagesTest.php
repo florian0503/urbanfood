@@ -74,4 +74,12 @@ final class PagesTest extends WebTestCase
         $client->request('GET', '/carte');
         self::assertSelectorNotExists('nav.uf-nav--overlay');
     }
+
+    public function testScrollTopButtonIsPresent(): void
+    {
+        $client = self::createClient();
+        $client->request('GET', '/carte');
+
+        self::assertSelectorExists('button.uf-totop');
+    }
 }
