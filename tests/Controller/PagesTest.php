@@ -126,6 +126,14 @@ final class PagesTest extends WebTestCase
         self::assertSelectorExists('meta[name="robots"][content="noindex"]');
     }
 
+    public function testHomeHasOpenBadge(): void
+    {
+        $client = self::createClient();
+        $client->request('GET', '/');
+
+        self::assertSelectorExists('.uf-open-badge');
+    }
+
     public function testCookieBannerIsPresent(): void
     {
         $client = self::createClient();

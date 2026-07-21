@@ -210,12 +210,52 @@ function setupCookieConsent() {
     };
 }
 
+/*
+ * Badge Ouvert / Ferme dans le hero, calcule sur les horaires reels
+ * du restaurant (fuseau Europe/Paris).
+ * Horaires en minutes depuis minuit : [ouverture, fermeture] par jour
+ * (0 = dimanche).
+ */
+const OPENING_HOURS = {
+    0: [720, 1320],
+    1: [660, 1350],
+    2: [660, 1350],
+    3: [660, 1350],
+    4: [660, 1350],
+    5: [660, 1410],
+    6: [660, 1410],
+};
+
+function setupOpenBadge() {
+    const badge = document.querySelector('.uf-open-badge');
+
+    if (!badge) {
+        return;
+    }
+
+    const update = () => {
+        const paris = new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Paris' }));
+        const hours = OPENING_HOURS[paris.getDay()];
+        const minutes = 60 * paris.getHours() + paris.getMinutes();
+        const isOpen = minutes >= hours[0] && minutes < hours[1];
+
+        badge.textContent = isOpen ? 'OUVERT' : 'FERMÉ';
+        badge.classList.toggle('uf-open-badge--open', isOpen);
+        badge.classList.toggle('uf-open-badge--closed', !isOpen);
+        badge.hidden = false;
+    };
+
+    update();
+    setInterval(update, 60000);
+}
+
 function init() {
     setupReveal();
     setupVideo();
     setupNavOverlay();
     setupScrollTop();
     setupCookieConsent();
+    setupOpenBadge();
 }
 
 // Le module peut etre execute avant ou apres DOMContentLoaded
