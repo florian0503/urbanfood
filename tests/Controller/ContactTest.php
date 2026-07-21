@@ -22,6 +22,7 @@ final class ContactTest extends WebTestCase
         ]);
 
         self::assertResponseRedirects('/contact');
+        self::assertEmailCount(1);
         $client->followRedirect();
         self::assertSelectorTextContains('.uf-form__submit', 'Envoyé');
         self::assertSame($countBefore + 1, $repository->count([]));
@@ -43,6 +44,7 @@ final class ContactTest extends WebTestCase
         ]);
 
         self::assertResponseRedirects('/contact');
+        self::assertEmailCount(0);
         self::assertSame($countBefore, $repository->count([]));
     }
 
