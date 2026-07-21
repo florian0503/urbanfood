@@ -77,8 +77,40 @@ function setupNavOverlay() {
     window.addEventListener('scroll', update, { passive: true });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+/*
+ * Bouton retour en haut : apparait apres 600px de scroll,
+ * remonte en douceur au clic.
+ */
+function setupScrollTop() {
+    const button = document.querySelector('.uf-totop');
+
+    if (!button) {
+        return;
+    }
+
+    const update = () => {
+        button.classList.toggle('uf-totop--visible', window.scrollY > 600);
+    };
+
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+
+    button.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+function init() {
     setupReveal();
     setupVideo();
     setupNavOverlay();
-});
+    setupScrollTop();
+}
+
+// Le module peut etre execute avant ou apres DOMContentLoaded
+// selon le cache navigateur : on gere les deux cas.
+if ('loading' === document.readyState) {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
+}
