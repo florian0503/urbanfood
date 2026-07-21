@@ -1,0 +1,108 @@
+/* ==========================================================================
+   Urban's Food — tokens & styles globaux (design v2, style editorial/poster)
+   ========================================================================== */
+
+:root {
+    --uf-paper: #F2EFE7;
+    --uf-ink: #141412;
+    --uf-green: #1E7A34;
+    --uf-green-light: #6FBF7F;
+    --uf-card: #FDFBF4;
+    --uf-photo: #E5E1D3;
+    --uf-shadow: #E0DCCB;
+    --uf-font-title: 'Anton', sans-serif;
+    --uf-font-body: 'Archivo', sans-serif;
+    --uf-font-mono: 'IBM Plex Mono', monospace;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--uf-paper);
+}
+
+body {
+    font-family: var(--uf-font-body);
+    color: var(--uf-ink);
+    min-height: 100vh;
+}
+
+::selection {
+    background: var(--uf-green);
+    color: var(--uf-paper);
+}
+
+a {
+    color: var(--uf-ink);
+}
+
+a:hover {
+    color: var(--uf-green);
+}
+
+/* --- Conteneur commun --- */
+
+.uf-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+/* --- Apparition au scroll --- */
+
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.65s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+[data-reveal][data-revealed] {
+    opacity: 1;
+    transform: none;
+}
+
+/* --- Animations --- */
+
+@keyframes uf-marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes uf-stamp {
+    from {
+        transform: scale(1.6) rotate(4deg);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(0.95) rotate(-6deg);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(1) rotate(-6deg);
+        opacity: 1;
+    }
+}
+
+@keyframes uf-wobble {
+    0%,
+    100% {
+        transform: rotate(-6deg);
+    }
+
+    50% {
+        transform: rotate(-3deg);
+    }
+}
