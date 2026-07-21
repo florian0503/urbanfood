@@ -1194,6 +1194,91 @@ a:hover {
     border-color: var(--uf-ink);
 }
 
+/* --- Pages d'erreur --- */
+
+.uf-error {
+    border-bottom: 2px solid var(--uf-ink);
+}
+
+.uf-error__inner {
+    min-height: calc(100vh - 62px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 88px;
+    padding-bottom: 88px;
+}
+
+.uf-error__label {
+    font-family: var(--uf-font-mono);
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--uf-green);
+    margin-bottom: 16px;
+}
+
+.uf-error__title {
+    font-family: var(--uf-font-title);
+    font-size: clamp(56px, 9vw, 140px);
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 0.87;
+    letter-spacing: -1px;
+    font-weight: 400;
+}
+
+.uf-error__accent {
+    color: var(--uf-green);
+}
+
+.uf-error__text {
+    font-size: 17px;
+    line-height: 1.6;
+    margin: 28px 0 0;
+    max-width: 460px;
+    color: rgb(20 20 18 / 72%);
+}
+
+.uf-error__actions {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.uf-error__cta {
+    font-family: var(--uf-font-title);
+    font-size: 19px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--uf-paper);
+    background: var(--uf-ink);
+    padding: 15px 30px;
+    text-decoration: none;
+    transition: background 0.15s ease;
+}
+
+.uf-error__cta:hover {
+    background: var(--uf-green);
+    color: var(--uf-paper);
+}
+
+.uf-error__link {
+    font-family: var(--uf-font-mono);
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    color: var(--uf-ink);
+    text-decoration: none;
+    border-bottom: 2px solid var(--uf-green);
+    padding-bottom: 4px;
+    transition: color 0.15s ease;
+}
+
+.uf-error__link:hover {
+    color: var(--uf-green);
+}
+
 /* --- Footer --- */
 
 .uf-footer {

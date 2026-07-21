@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Erreur {{ status_code }} — Urban's Food{% endblock %}
+{% block robots %}<meta name="robots" content="noindex">{% endblock %}
+
+{% block body %}
+    <div class="uf-error">
+        <div class="uf-container uf-error__inner">
+            <div class="uf-error__label">ERREUR {{ status_code }}</div>
+            <h1 class="uf-error__title">Ça a coincé<span class="uf-error__accent">.</span></h1>
+            <p class="uf-error__text">
+                Quelque chose ne s'est pas passé comme prévu. Reviens à l'accueil et réessaie.
+            </p>
+            <div class="uf-error__actions">
+                <a href="{{ path('app_home') }}" class="uf-error__cta">Retour à l'accueil →</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

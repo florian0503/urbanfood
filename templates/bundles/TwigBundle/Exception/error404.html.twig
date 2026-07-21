@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page introuvable — Urban's Food{% endblock %}
+{% block robots %}<meta name="robots" content="noindex">{% endblock %}
+
+{% block body %}
+    <div class="uf-error">
+        <div class="uf-container uf-error__inner">
+            <div class="uf-error__label">ERREUR 404 — RIEN À CETTE ADRESSE</div>
+            <h1 class="uf-error__title">Perdu ?<br><span class="uf-error__accent">Reviens manger.</span></h1>
+            <p class="uf-error__text">
+                Cette page n'existe pas (ou plus). Par contre, les tacos et les smash burgers, eux, sont toujours là.
+            </p>
+            <div class="uf-error__actions">
+                <a href="{{ path('app_home') }}" class="uf-error__cta">Retour à l'accueil →</a>
+                <a href="{{ path('app_carte') }}" class="uf-error__link">VOIR LA CARTE</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
