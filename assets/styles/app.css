@@ -1491,6 +1491,159 @@ a:hover {
     color: var(--uf-ink);
 }
 
+/* --- Bandeau cookies --- */
+
+.uf-cookies {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 60;
+    width: min(460px, calc(100vw - 48px));
+    background: var(--uf-card);
+    border: 2px solid var(--uf-ink);
+    box-shadow: 8px 8px 0 var(--uf-green);
+    padding: 28px;
+}
+
+.uf-cookies__title {
+    font-family: var(--uf-font-title);
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 10px;
+    font-weight: 400;
+}
+
+.uf-cookies__text {
+    font-size: 13.5px;
+    line-height: 1.6;
+    margin: 0 0 18px;
+    color: rgb(20 20 18 / 75%);
+}
+
+.uf-cookies__panel {
+    border-top: 2px solid var(--uf-ink);
+    padding-top: 14px;
+    margin-bottom: 18px;
+}
+
+.uf-cookies__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px dashed rgb(20 20 18 / 30%);
+}
+
+.uf-cookies__label {
+    font-family: var(--uf-font-mono);
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+.uf-cookies__row input[type='checkbox'] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--uf-green);
+    flex-shrink: 0;
+}
+
+.uf-cookies__actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.uf-cookies__btn {
+    font-family: var(--uf-font-title);
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 11px 20px;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.uf-cookies__btn--accept {
+    color: var(--uf-paper);
+    background: var(--uf-ink);
+    border: 2px solid var(--uf-ink);
+}
+
+.uf-cookies__btn--accept:hover {
+    background: var(--uf-green);
+    border-color: var(--uf-green);
+}
+
+.uf-cookies__btn--outline {
+    color: var(--uf-ink);
+    background: transparent;
+    border: 2px solid var(--uf-ink);
+}
+
+.uf-cookies__btn--outline:hover {
+    background: var(--uf-ink);
+    color: var(--uf-paper);
+}
+
+.uf-cookies__btn--link {
+    font-family: var(--uf-font-mono);
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--uf-ink);
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--uf-green);
+    padding: 0 0 3px;
+}
+
+.uf-cookies__btn--link:hover {
+    color: var(--uf-green);
+}
+
+.uf-cookies__btn--save {
+    margin-top: 14px;
+    color: var(--uf-paper);
+    background: var(--uf-green);
+    border: 2px solid var(--uf-green);
+}
+
+.uf-cookies__btn--save:hover {
+    background: var(--uf-ink);
+    border-color: var(--uf-ink);
+}
+
+.uf-cookies__more {
+    margin: 14px 0 0;
+    font-size: 12px;
+}
+
+.uf-footer__credits-btn {
+    font-family: var(--uf-font-mono);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media (max-width: 600px) {
+    .uf-cookies {
+        left: 16px;
+        bottom: 16px;
+        width: calc(100vw - 32px);
+        padding: 20px;
+    }
+}
+
 /* --- Apparition au scroll --- */
 
 [data-reveal] {

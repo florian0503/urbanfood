@@ -1,0 +1,31 @@
+<div class="uf-cookies" hidden role="dialog" aria-label="Gestion des cookies">
+    <h2 class="uf-cookies__title">Cookies</h2>
+    <p class="uf-cookies__text">
+        On aimerait utiliser des cookies pour mesurer l'audience du site. Les cookies essentiels
+        (sécurité, session), eux, sont toujours actifs. Ton choix est conservé 6 mois et modifiable
+        à tout moment via « Gérer les cookies » en bas de page.
+    </p>
+    <div class="uf-cookies__panel" hidden>
+        <div class="uf-cookies__row">
+            <label class="uf-cookies__label" for="uf-consent-essential">Essentiels — toujours actifs</label>
+            <input type="checkbox" id="uf-consent-essential" checked disabled>
+        </div>
+        <div class="uf-cookies__row">
+            <label class="uf-cookies__label" for="uf-consent-stats">Statistiques (mesure d'audience)</label>
+            <input type="checkbox" id="uf-consent-stats">
+        </div>
+        <div class="uf-cookies__row">
+            <label class="uf-cookies__label" for="uf-consent-mkt">Marketing (réseaux sociaux, pub)</label>
+            <input type="checkbox" id="uf-consent-mkt">
+        </div>
+        <button type="button" class="uf-cookies__btn uf-cookies__btn--save uf-cookies__save">Enregistrer mes choix</button>
+    </div>
+    <div class="uf-cookies__actions">
+        <button type="button" class="uf-cookies__btn uf-cookies__btn--accept uf-cookies__accept">Accepter</button>
+        <button type="button" class="uf-cookies__btn uf-cookies__btn--outline uf-cookies__refuse">Refuser</button>
+        <button type="button" class="uf-cookies__btn uf-cookies__btn--link uf-cookies__custom">Personnaliser</button>
+    </div>
+    <p class="uf-cookies__more">
+        <a href="{{ path('app_confidentialite') }}" class="uf-legal__link">Politique de confidentialité</a>
+    </p>
+</div>
