@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Politique de confidentialité — Urban's Food{% endblock %}
+{% block meta_description %}Politique de confidentialité du site Urban's Food : données collectées, finalités et droits.{% endblock %}
+
+{% block body %}
+    <header class="uf-page-head">
+        <div class="uf-container uf-page-head__inner">
+            <div data-reveal="0" class="uf-page-head__label">PROTECTION DES DONNÉES — RGPD</div>
+            <h1 data-reveal="80" class="uf-page-head__title">Confidentialité<span class="uf-page-head__accent">.</span></h1>
+        </div>
+    </header>
+
+    <div class="uf-container uf-legal">
+        <section class="uf-legal__section">
+            <h2 class="uf-legal__heading">Responsable du traitement</h2>
+            <p class="uf-legal__text">
+                Urban's Food, 12 rue de la République, 69007 Lyon — 04 72 00 00 00.
+            </p>
+        </section>
+
+        <section class="uf-legal__section">
+            <h2 class="uf-legal__heading">Données collectées</h2>
+            <p class="uf-legal__text">
+                Le formulaire de contact collecte : nom, adresse email, sujet et contenu du message, ainsi que la date
+                d'envoi. Aucune autre donnée personnelle n'est collectée, et aucun profilage n'est réalisé.
+            </p>
+        </section>
+
+        <section class="uf-legal__section">
+            <h2 class="uf-legal__heading">Finalité et base légale</h2>
+            <p class="uf-legal__text">
+                Ces données servent uniquement à répondre aux demandes envoyées via le formulaire (renseignements,
+                privatisation, événements). La base légale du traitement est l'intérêt légitime à répondre aux
+                sollicitations des visiteurs.
+            </p>
+        </section>
+
+        <section class="uf-legal__section">
+            <h2 class="uf-legal__heading">Durée de conservation</h2>
+            <p class="uf-legal__text">
+                Les messages sont conservés au maximum 12 mois après leur envoi, puis supprimés.
+            </p>
+        </section>
+
+        <section class="uf-legal__section">
+            <h2 class="uf-legal__heading">Destinataires</h2>
+            <p class="uf-legal__text">
+                Les données sont accessibles uniquement à l'équipe d'Urban's Food. Elles ne sont ni vendues, ni cédées,
+                ni transmises à des tiers.
+            </p>
+        </section>
+
+        <section class="uf-legal__section">
+            <h2 class="uf-legal__heading">Cookies</h2>
+            <p class="uf-legal__text">
+                Le site n'utilise aucun cookie publicitaire ni traceur d'audience. Seul un cookie technique de session,
+                exempté de consentement, est utilisé pour le fonctionnement du site (sécurité des formulaires,
+                espace d'administration).
+            </p>
+        </section>
+
+        <section class="uf-legal__section">
+            <h2 class="uf-legal__heading">Services tiers</h2>
+            <p class="uf-legal__text">
+                Certaines ressources sont chargées depuis des services externes, ce qui transmet ton adresse IP à ces
+                services : les polices de caractères (Google Fonts) et la carte interactive du bas de page
+                (OpenStreetMap). Aucune autre donnée ne leur est communiquée.
+            </p>
+        </section>
+
+        <section class="uf-legal__section">
+            <h2 class="uf-legal__heading">Tes droits</h2>
+            <p class="uf-legal__text">
+                Conformément au RGPD, tu disposes d'un droit d'accès, de rectification, d'effacement, d'opposition, de
+                limitation et de portabilité sur tes données. Pour l'exercer, contacte-nous au 04 72 00 00 00 ou via le
+                <a href="{{ path('app_contact') }}" class="uf-legal__link">formulaire de contact</a>.
+                Tu peux également adresser une réclamation à la CNIL (cnil.fr).
+            </p>
+        </section>
+    </div>
+{% endblock %}

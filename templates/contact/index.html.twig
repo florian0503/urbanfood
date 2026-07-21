@@ -59,6 +59,10 @@
                 <button type="submit" class="uf-form__submit">
                     {%- if app.flashes('contact_sent')|length > 0 -%}Envoyé ✓{%- else -%}Envoyer{%- endif -%}
                 </button>
+                <p class="uf-form__rgpd">
+                    Les informations envoyées via ce formulaire servent uniquement à répondre à ta demande.
+                    <a href="{{ path('app_confidentialite') }}" class="uf-legal__link">Politique de confidentialité</a>
+                </p>
             {{ form_end(form) }}
         </div>
     </div>

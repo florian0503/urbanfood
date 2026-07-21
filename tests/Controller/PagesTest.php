@@ -75,6 +75,27 @@ final class PagesTest extends WebTestCase
         self::assertSelectorNotExists('nav.uf-nav--overlay');
     }
 
+    public function testLegalPagesAreSuccessful(): void
+    {
+        $client = self::createClient();
+
+        $client->request('GET', '/mentions-legales');
+        self::assertResponseIsSuccessful();
+        self::assertSelectorTextContains('.uf-page-head__title', 'Mentions légales');
+
+        $client->request('GET', '/confidentialite');
+        self::assertResponseIsSuccessful();
+        self::assertSelectorTextContains('.uf-page-head__title', 'Confidentialité');
+    }
+
+    public function testContactShowsRgpdMention(): void
+    {
+        $client = self::createClient();
+        $client->request('GET', '/contact');
+
+        self::assertSelectorExists('.uf-form__rgpd a[href="/confidentialite"]');
+    }
+
     public function testScrollTopButtonIsPresent(): void
     {
         $client = self::createClient();
