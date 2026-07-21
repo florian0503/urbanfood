@@ -1056,6 +1056,55 @@ a:hover {
     }
 }
 
+/* --- Login admin --- */
+
+.uf-login {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+}
+
+.uf-login__card {
+    width: 100%;
+    max-width: 420px;
+    border: 2px solid var(--uf-ink);
+    background: var(--uf-card);
+    padding: 44px;
+    box-shadow: 8px 8px 0 var(--uf-shadow);
+}
+
+.uf-login__title {
+    font-family: var(--uf-font-title);
+    font-size: 32px;
+    text-transform: uppercase;
+    margin: 0 0 6px;
+    font-weight: 400;
+}
+
+.uf-login__sub {
+    font-family: var(--uf-font-mono);
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--uf-green);
+    margin: 0 0 32px;
+}
+
+.uf-login__error {
+    font-family: var(--uf-font-mono);
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: #A3341E;
+    margin: 0 0 18px;
+}
+
+.uf-login__form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
 /* --- Footer --- */
 
 .uf-footer {

@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion — Urban's Food{% endblock %}
+
+{% block header %}{% endblock %}
+{% block footer %}{% endblock %}
+
+{% block body %}
+    <div class="uf-login">
+        <div class="uf-login__card">
+            <h1 class="uf-login__title">Urban's Food</h1>
+            <p class="uf-login__sub">ESPACE ADMIN</p>
+            {% if error %}
+                <p class="uf-login__error">{{ error.messageKey|trans(error.messageData, 'security') }}</p>
+            {% endif %}
+            <form method="post" class="uf-login__form">
+                <input type="text" name="_username" value="{{ last_username }}" placeholder="Utilisateur" aria-label="Utilisateur" required autofocus class="uf-form__input">
+                <input type="password" name="_password" placeholder="Mot de passe" aria-label="Mot de passe" required class="uf-form__input">
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                <button type="submit" class="uf-form__submit">Connexion</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
