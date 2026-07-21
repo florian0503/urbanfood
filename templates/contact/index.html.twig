@@ -39,6 +39,7 @@
             <h2 class="uf-form__title">Un message ?</h2>
             <p class="uf-form__sub">privatisation · événement · question</p>
             {{ form_start(form, {attr: {class: 'uf-form__fields'}}) }}
+                {{ form_errors(form) }}
                 <div class="uf-form__grid">
                     <div>
                         {{ form_errors(form.name) }}

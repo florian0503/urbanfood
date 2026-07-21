@@ -7,12 +7,14 @@ use App\Form\ContactMessageType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
+use Symfony\Component\Form\FormError;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Address;
 use Symfony\Component\Mime\Email;
+use Symfony\Component\RateLimiter\RateLimiterFactoryInterface;
 use Symfony\Component\Routing\Attribute\Route;
 
 final class ContactController extends AbstractController
@@ -22,12 +24,18 @@ final class ContactController extends AbstractController
         Request $request,
         EntityManagerInterface $entityManager,
         MailerInterface $mailer,
+        RateLimiterFactoryInterface $contactFormLimiter,
         #[Autowire(env: 'CONTACT_EMAIL_TO')] string $contactEmailTo,
         #[Autowire(env: 'CONTACT_EMAIL_FROM')] string $contactEmailFrom,
     ): Response {
         $contactMessage = new ContactMessage();
         $form = $this->createForm(ContactMessageType::class, $contactMessage);
         $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()
+            && !$contactFormLimiter->create($request->getClientIp() ?? 'anonyme')->consume()->isAccepted()) {
+            $form->addError(new FormError('Trop de messages envoyés. Réessaie dans quelques minutes.'));
+        }
 
         if ($form->isSubmitted() && $form->isValid()) {
             // Honeypot rempli = bot : on simule le succes sans rien enregistrer.

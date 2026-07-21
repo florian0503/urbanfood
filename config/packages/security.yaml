@@ -24,6 +24,9 @@ security:
                 login_path: app_login
                 check_path: app_login
                 default_target_path: admin
+            # Anti brute-force : 5 tentatives max par minute (par login + IP)
+            login_throttling:
+                max_attempts: 5
             logout:
                 path: app_logout
                 target: app_home
