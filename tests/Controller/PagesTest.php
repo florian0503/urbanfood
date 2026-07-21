@@ -63,4 +63,15 @@ final class PagesTest extends WebTestCase
         self::assertSelectorExists('nav.uf-nav');
         self::assertSelectorTextContains('.uf-nav__link--active', 'La carte');
     }
+
+    public function testNavIsOverlayOnHomeOnly(): void
+    {
+        $client = self::createClient();
+
+        $client->request('GET', '/');
+        self::assertSelectorExists('nav.uf-nav--overlay');
+
+        $client->request('GET', '/carte');
+        self::assertSelectorNotExists('nav.uf-nav--overlay');
+    }
 }

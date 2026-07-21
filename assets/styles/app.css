@@ -62,6 +62,7 @@ a:hover {
     z-index: 50;
     background: var(--uf-paper);
     border-bottom: 2px solid var(--uf-ink);
+    transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .uf-nav__inner {
@@ -88,6 +89,7 @@ a:hover {
     font-size: 24px;
     letter-spacing: 0.5px;
     text-transform: uppercase;
+    transition: color 0.25s ease;
 }
 
 .uf-nav__badge {
@@ -119,7 +121,7 @@ a:hover {
     color: var(--uf-ink);
     background: transparent;
     border-left: 2px solid var(--uf-ink);
-    transition: background 0.15s ease, color 0.15s ease;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.25s ease;
 }
 
 .uf-nav__link--active {
@@ -130,6 +132,46 @@ a:hover {
 .uf-nav__link:hover {
     background: var(--uf-ink);
     color: var(--uf-paper);
+}
+
+/* Variante accueil : nav transparente au-dessus du hero, redevient creme au scroll */
+
+.uf-nav--overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.uf-nav--overlay:not(.uf-nav--scrolled) {
+    background: transparent;
+    border-bottom-color: transparent;
+}
+
+.uf-nav--overlay:not(.uf-nav--scrolled) .uf-nav__logo {
+    color: var(--uf-paper);
+}
+
+.uf-nav--overlay:not(.uf-nav--scrolled) .uf-nav__badge {
+    color: var(--uf-green-light);
+    border-color: var(--uf-green-light);
+}
+
+.uf-nav--overlay:not(.uf-nav--scrolled) .uf-nav__link {
+    color: var(--uf-paper);
+    border-left-color: rgb(242 239 231 / 30%);
+}
+
+.uf-nav--overlay:not(.uf-nav--scrolled) .uf-nav__link--active {
+    color: var(--uf-paper);
+}
+
+.uf-nav--overlay:not(.uf-nav--scrolled) .uf-nav__link:hover {
+    color: var(--uf-paper);
+}
+
+.uf-nav--overlay:not(.uf-nav--scrolled) .uf-nav__links {
+    border-top-color: rgb(242 239 231 / 30%);
 }
 
 @media (max-width: 860px) {
@@ -162,7 +204,7 @@ a:hover {
 
 .uf-hero {
     position: relative;
-    height: calc(100vh - 60px);
+    height: 100vh;
     min-height: 560px;
     border-bottom: 2px solid var(--uf-ink);
     overflow: hidden;
@@ -281,7 +323,7 @@ a:hover {
 
 .uf-hero__stamp {
     position: absolute;
-    top: 40px;
+    top: 104px;
     right: 40px;
     width: 108px;
     height: 108px;
